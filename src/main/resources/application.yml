@@ -1,0 +1,20 @@
+server:
+  port: ${PORT:8888}
+
+spring:
+  application:
+    name: soultechcond-configserver
+  cloud:
+    config:
+      server:
+        git:
+          uri: ${URI}
+          username: ${USERNAME}
+          password: ${PASSWORD}
+          default-label: main
+          force-pull: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: https://soultechcond-discovery.herokuapp.com/eureka
